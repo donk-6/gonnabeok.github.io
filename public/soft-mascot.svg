@@ -1,0 +1,21 @@
+<svg width="420" height="250" viewBox="0 0 420 250" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Soft personal blog mascot">
+  <rect x="8" y="8" width="404" height="234" rx="44" fill="white" fill-opacity=".62" stroke="white" stroke-width="10"/>
+  <ellipse cx="209" cy="203" rx="92" ry="18" fill="#A7C96E" fill-opacity=".55"/>
+  <path d="M150 128C143 91 162 53 200 60C212 35 256 37 269 68C306 72 323 104 307 139C293 170 263 180 229 174C185 187 157 168 150 128Z" fill="#FFF7F0" stroke="#7F4C43" stroke-width="5" stroke-linejoin="round"/>
+  <path d="M173 70L160 42L196 59" fill="#FFF7F0"/>
+  <path d="M173 70L160 42L196 59" stroke="#7F4C43" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <path d="M263 69L295 45L290 86" fill="#FFF7F0"/>
+  <path d="M263 69L295 45L290 86" stroke="#7F4C43" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"/>
+  <circle cx="194" cy="119" r="7" fill="#4A3632"/>
+  <circle cx="252" cy="119" r="7" fill="#4A3632"/>
+  <path d="M221 127C225 132 231 132 235 127" stroke="#7F4C43" stroke-width="4" stroke-linecap="round"/>
+  <path d="M207 135C216 142 227 142 236 135" stroke="#7F4C43" stroke-width="4" stroke-linecap="round"/>
+  <ellipse cx="174" cy="133" rx="14" ry="8" fill="#F5A49A" fill-opacity=".7"/>
+  <ellipse cx="272" cy="133" rx="14" ry="8" fill="#F5A49A" fill-opacity=".7"/>
+  <path d="M235 78C235 91 226 99 213 99C201 99 192 91 192 78C192 66 201 57 213 57C226 57 235 66 235 78Z" fill="#B4D56E"/>
+  <path d="M213 57V99M192 78H235M199 64L228 92M228 64L199 92" stroke="#6B8F3E" stroke-width="4" stroke-linecap="round"/>
+  <path d="M300 129C335 111 352 148 326 168C306 183 285 169 300 129Z" fill="#FFF7F0" stroke="#7F4C43" stroke-width="5"/>
+  <path d="M186 163C185 179 175 189 160 190M259 164C260 181 270 190 286 190" stroke="#7F4C43" stroke-width="5" stroke-linecap="round"/>
+  <circle cx="143" cy="193" r="5" fill="#8FB760"/>
+  <circle cx="284" cy="196" r="5" fill="#8FB760"/>
+</svg>

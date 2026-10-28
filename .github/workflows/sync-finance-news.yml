@@ -1,0 +1,82 @@
+name: 每日财经新闻同步
+
+# 每天 08:30 和 20:30（UTC+8）自动拉取当日财经新闻，
+# 更新 src/data/finance-news.json 并重新构建部署到 GitHub Pages。
+#
+# 注意：本工作流仅在你保留 GitHub 镜像仓库时生效。
+# 若站点部署在 Gitee Pages（免费版无自动部署），可以只用本工作流同步新闻数据，
+# 再把构建产物推到 Gitee 仓库，并在 Gitee Pages 页面手动点击「更新」。
+on:
+  schedule:
+    - cron: '30 0 * * *'   # 00:30 UTC = 08:30 北京时间
+    - cron: '30 12 * * *'  # 12:30 UTC = 20:30 北京时间
+  workflow_dispatch: {}
+
+permissions:
+  contents: write
+
+jobs:
+  sync-news:
+    name: 同步财经新闻
+    runs-on: ubuntu-latest
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 拉取当日财经新闻并写入数据文件
+        run: node scripts/sync-finance-news.mjs
+
+      - name: 提交并推送更新
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add src/data/finance-news.json
+          if git diff --cached --quiet; then
+            echo "今日新闻无变化，跳过提交"
+          else
+            git commit -m "chore: 每日财经新闻同步 $(date +'%Y-%m-%d')"
+            git push
+          fi
+
+  build-and-deploy:
+    name: 构建并部署
+    needs: sync-news
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: 检出代码
+        uses: actions/checkout@v4
+
+      - name: 安装 Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: 启用 pnpm
+        run: corepack enable
+
+      - name: 安装依赖
+        run: pnpm install --frozen-lockfile
+
+      - name: 构建站点
+        run: pnpm build
+
+      - name: 上传构建产物
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: dist
+
+      - name: 部署到 GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
