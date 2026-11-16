@@ -64,7 +64,9 @@ jobs:
           node-version: 20
 
       - name: 启用 pnpm
-        run: corepack enable
+        uses: pnpm/action-setup@v4
+        with:
+          version: 8
 
       - name: 安装依赖
         run: pnpm install --frozen-lockfile
