@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { computed, nextTick, onMounted, ref } from 'vue'
 import {
-  buildOuterAudioUrl,
   buildPlaylistPlayerUrl,
   fetchPlaylist,
   parseNeteaseLink,
@@ -26,8 +25,6 @@ const volume = ref(0.8)
 const showList = ref(false)
 const fallbackUrl = ref('')
 const playerKey = ref(0)
-
-let outerFallbackTried = false
 
 const currentTrack = computed(() =>
   currentIndex.value >= 0 ? (tracks.value[currentIndex.value] ?? null) : null
@@ -59,7 +56,6 @@ function savePlaylistId(id: string) {
 function playAt(index: number) {
   if (index < 0 || index >= tracks.value.length) return
   currentIndex.value = index
-  outerFallbackTried = false
   const audio = audioEl.value
   if (!audio) return
   audio.src = tracks.value[index].url
@@ -119,20 +115,9 @@ function onMeta() {
 
 function onAudioError() {
   const track = currentTrack.value
-  const audio = audioEl.value
-  if (!track || !audio) return
+  if (!track) return
 
-  // 第一优先：Meting 音源；失败则尝试网易云官方试听直链
-  if (!outerFallbackTried && track.songId) {
-    outerFallbackTried = true
-    audio.src = buildOuterAudioUrl(track.songId)
-    audio.load()
-    audio.play().catch(() => {})
-    showTip('当前音源不可用，正在切换备用音源…')
-    return
-  }
-
-  showTip(`《${track.title}》无法播放，可能受版权限制`, true)
+  showTip(`《${track.title}》无法播放，可能受版权或地区限制，已跳到下一首`, true)
   if (tracks.value.length > 1) {
     window.setTimeout(next, 1200)
   }
@@ -368,7 +353,7 @@ onMounted(() => {
             {{ syncing ? '同步中…' : '同步' }}
           </button>
         </div>
-        <small>试试你的网易云歌单吧（支持 music.163.com 歌单链接）</small>
+        <small>支持 music.163.com / y.music.163.com 歌单链接，或直接粘贴歌单 ID</small>
       </div>
     </div>
   </section>
