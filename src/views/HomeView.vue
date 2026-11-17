@@ -5,6 +5,7 @@ import FinanceNewsModule from '../components/FinanceNewsModule.vue'
 import MusicModule from '../components/MusicModule.vue'
 import MascotCard from '../components/MascotCard.vue'
 import GreetingCard from '../components/GreetingCard.vue'
+import CalendarCheckIn from '../components/CalendarCheckIn.vue'
 import { openExternal } from '../lib/external'
 
 const featuredPosts = computed(() => posts.slice(0, 3))
@@ -15,15 +16,6 @@ const timeText = computed(() => {
     hour: '2-digit',
     minute: '2-digit',
     hour12: false,
-  })
-})
-
-const dateText = computed(() => {
-  return now.value.toLocaleDateString('zh-CN', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric',
-    weekday: 'long',
   })
 })
 
@@ -88,16 +80,7 @@ onBeforeUnmount(() => {
         <span>{{ timeText }}</span>
       </div>
 
-      <div class="glass-card calendar-card">
-        <strong>{{ dateText }}</strong>
-        <div class="week-row">
-          <span>一</span><span>二</span><span
-            class="active-week">三</span><span>四</span><span>五</span><span>六</span><span>日</span>
-        </div>
-        <div class="date-grid">
-          <span v-for="day in 28" :key="day" :class="{ today: day === now.getDate() }">{{ day }}</span>
-        </div>
-      </div>
+      <CalendarCheckIn />
     </aside>
   </section>
 

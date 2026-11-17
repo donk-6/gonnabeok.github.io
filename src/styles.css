@@ -686,54 +686,6 @@ main {
   font-variant-numeric: tabular-nums;
 }
 
-.calendar-card {
-  padding: 1.1rem 1.2rem;
-}
-
-.calendar-card strong {
-  display: block;
-  margin-bottom: 0.8rem;
-  color: #111827;
-  font-size: 0.95rem;
-}
-
-.week-row,
-.date-grid {
-  display: grid;
-  grid-template-columns: repeat(7, 1fr);
-  gap: 0.2rem;
-  text-align: center;
-}
-
-.week-row {
-  margin-bottom: 0.35rem;
-}
-
-.week-row span {
-  color: #9aa4b8;
-  font-size: 0.68rem;
-  font-weight: 700;
-}
-
-.week-row .active-week {
-  color: #1b74e4;
-}
-
-.date-grid span {
-  display: grid;
-  aspect-ratio: 1;
-  place-items: center;
-  color: #586174;
-  border-radius: 0.35rem;
-  font-size: 0.72rem;
-}
-
-.date-grid span.today {
-  color: #ffffff;
-  background: #1b74e4;
-  font-weight: 800;
-}
-
 /* Bottom row */
 .lower-board {
   display: grid;
