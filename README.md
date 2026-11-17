@@ -29,7 +29,9 @@ pnpm run preview
 首页的「每日财经新闻」模块由 `scripts/sync-finance-news.mjs` 生成数据。
 
 - 本地/手动：`node scripts/sync-finance-news.mjs`，会更新 `src/data/finance-news.json`。
-- 自动：`.github/workflows/sync-finance-news.yml` 每天 08:30 / 20:30 定时同步并重新部署。
+- 自动：`.github/workflows/sync-finance-news.yml` 每天 08:30 / 20:30（北京时间）拉取新闻、提交数据、重新构建并发布到 Pages。
+- 手动验证：在 GitHub 仓库 Actions 页面选择「每日财经新闻同步」，点击 **Run workflow** 可立即执行一次。
+- 脚本内置重试和兜底：接口临时失败会重试 3 次；当天没有关键词命中时会用最新新闻占位，避免模块空白。
 
 ## Content
 

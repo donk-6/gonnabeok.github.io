@@ -106,6 +106,26 @@ async function main() {
   console.log(`已同步 ${output.items.length} 条财经新闻（${perCategory}）→ src/data/finance-news.json`)
 }
 
+/** 带重试的 JSON 请求，避免单次网络抖动导致整个同步失败。 */
+async function fetchJson(url, headers) {
+  let lastError
+  for (let attempt = 1; attempt <= 3; attempt += 1) {
+    try {
+      const response = await fetch(url, { headers })
+      if (!response.ok) {
+        throw new Error(`新浪财经接口请求失败：HTTP ${response.status}`)
+      }
+      return await response.json()
+    } catch (error) {
+      lastError = error
+      if (attempt < 3) {
+        await new Promise((resolve) => setTimeout(resolve, 500 * attempt))
+      }
+    }
+  }
+  throw lastError
+}
+
 /** 从多个频道抓取最近几页新闻，合并为一个列表。 */
 async function fetchRawItems() {
   const headers = {
@@ -120,11 +140,7 @@ async function fetchRawItems() {
       const url =
         `https://feed.mix.sina.com.cn/api/roll/get?pageid=${feed.pageid}` +
         `&lid=${feed.lid}&num=${PAGE_SIZE}&page=${page}`
-      const response = await fetch(url, { headers })
-      if (!response.ok) {
-        throw new Error(`新浪财经接口请求失败：HTTP ${response.status}`)
-      }
-      const payload = await response.json()
+      const payload = await fetchJson(url, headers)
       const data = payload?.result?.data
       if (Array.isArray(data)) {
         all.push(...data)
@@ -174,6 +190,14 @@ function pickItems(rawItems, category, limit) {
     if (pickedUrls.has(item.url)) continue
     picked.push(item)
     pickedUrls.add(item.url)
+  }
+
+  // 兜底：当天没有任何关键词命中时，用最新的一条新闻占位，
+  // 避免模块出现“今日新闻同步中”的空状态。
+  if (picked.length === 0) {
+    return rawItems
+      .filter((item) => String(item.title ?? '').trim())
+      .slice(0, limit)
   }
   return picked
 }
