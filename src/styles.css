@@ -61,6 +61,39 @@ button {
   border-bottom: 1px solid rgba(23, 32, 51, 0.08);
 }
 
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-width: 0;
+}
+
+.back-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  flex: 0 0 auto;
+  padding: 0.4rem 0.7rem;
+  color: #344054;
+  background: #eef3f8;
+  border: 1px solid rgba(23, 32, 51, 0.08);
+  border-radius: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-button svg {
+  width: 1rem;
+  height: 1rem;
+  fill: currentColor;
+}
+
+.back-button:active {
+  background: #dfe9f5;
+}
+
 .brand {
   display: inline-flex;
   align-items: center;

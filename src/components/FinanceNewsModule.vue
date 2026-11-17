@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { computed } from 'vue'
 import { financeNewsData } from '../data/finance-news'
+import { openExternal } from '../lib/external'
 
 const CATEGORY_ORDER = ['黄金', '标普500']
 
@@ -34,8 +35,7 @@ const updatedText = computed(() => {
           :key="item.url"
           class="news-item"
           :href="item.url"
-          target="_blank"
-          rel="noreferrer"
+          @click.prevent="openExternal(item.url)"
         >
           <span class="news-index">{{ index + 1 }}</span>
           <span class="news-body">
@@ -55,8 +55,7 @@ const updatedText = computed(() => {
     <a
       class="news-more"
       href="https://finance.sina.com.cn/roll/"
-      target="_blank"
-      rel="noreferrer"
+      @click.prevent="openExternal('https://finance.sina.com.cn/roll/')"
     >
       更多财经资讯 →
     </a>

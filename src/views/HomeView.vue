@@ -5,6 +5,7 @@ import FinanceNewsModule from '../components/FinanceNewsModule.vue'
 import MusicModule from '../components/MusicModule.vue'
 import MascotCard from '../components/MascotCard.vue'
 import GreetingCard from '../components/GreetingCard.vue'
+import { openExternal } from '../lib/external'
 
 const featuredPosts = computed(() => posts.slice(0, 3))
 const now = ref(new Date())
@@ -72,11 +73,11 @@ onBeforeUnmount(() => {
       <GreetingCard />
 
       <div class="quick-actions">
-        <a class="action-button dark" href="https://gitee.com/gonnabeok" target="_blank" rel="noreferrer">Gitee</a>
-        <a class="action-button" href="https://juejin.cn/" target="_blank" rel="noreferrer">稀土掘金</a>
-        <a class="action-button" href="https://es6.ruanyifeng.com/" target="_blank" rel="noreferrer">ES6</a>
-        <a class="action-button" href="https://developer.mozilla.org/" target="_blank" rel="noreferrer">javascript</a>
-        <a class="action-button" href="https://cn.vuejs.org/" target="_blank" rel="noreferrer">Vue3</a>
+        <a class="action-button dark" href="https://gitee.com/gonnabeok" @click.prevent="openExternal('https://gitee.com/gonnabeok')">Gitee</a>
+        <a class="action-button" href="https://juejin.cn/" @click.prevent="openExternal('https://juejin.cn/')">稀土掘金</a>
+        <a class="action-button" href="https://es6.ruanyifeng.com/" @click.prevent="openExternal('https://es6.ruanyifeng.com/')">ES6</a>
+        <a class="action-button" href="https://developer.mozilla.org/" @click.prevent="openExternal('https://developer.mozilla.org/')">javascript</a>
+        <a class="action-button" href="https://cn.vuejs.org/" @click.prevent="openExternal('https://cn.vuejs.org/')">Vue3</a>
       </div>
     </div>
 
