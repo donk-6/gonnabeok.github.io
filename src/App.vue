@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import DesktopPet from './components/DesktopPet/DesktopPet.vue'
-
 const year = new Date().getFullYear()
 </script>
 
@@ -28,6 +26,4 @@ const year = new Date().getFullYear()
       <span>Powered by Vue 3 &amp; Vite</span>
     </footer>
   </div>
-
-  <DesktopPet />
 </template>
