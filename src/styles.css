@@ -5,26 +5,10 @@
 
 /* ---------- 1. 设计令牌 ---------- */
 :root {
-  color-scheme: dark;
-
   /* 字体：展示字用 Playfair（拉丁）+ 宋体系（中文）；数据用等宽 */
   --font-display: 'Playfair Display', 'Songti SC', 'Noto Serif CJK SC', 'SimSun', serif;
   --font-body: 'PingFang SC', 'Hiragino Sans GB', 'Microsoft YaHei', sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', monospace;
-
-  /* 色彩：墨蓝主色 + 暖白纸色 + 日出橙强调（60 / 30 / 10） */
-  --color-bg: #0b0e14;
-  --color-surface: #111621;
-  --color-surface-2: #171d2a;
-  --color-line: rgba(236, 229, 216, 0.12);
-  --color-line-strong: rgba(236, 229, 216, 0.22);
-  --color-text: #ece5d8;
-  --color-muted: #b9b3a7;
-  --color-dim: #8d877b;
-  --color-accent: #ff8a3d;
-  --color-accent-deep: #e8622a;
-  --color-accent-soft: rgba(255, 138, 61, 0.14);
-  --color-sky: #7fa6c9;
 
   /* 字阶（1.25 模块化比例） */
   --step--2: 0.64rem;
@@ -60,6 +44,65 @@
   --dur-fast: 160ms;
   --dur-base: 320ms;
   --dur-slow: 640ms;
+}
+
+/* 默认深色：夜航刊 */
+:root,
+:root[data-theme='dark'] {
+  color-scheme: dark;
+
+  /* 色彩：墨蓝主色 + 暖白纸色 + 日出橙强调（60 / 30 / 10） */
+  --color-bg: #0b0e14;
+  --color-surface: #111621;
+  --color-surface-2: #171d2a;
+  --color-line: rgba(236, 229, 216, 0.12);
+  --color-line-strong: rgba(236, 229, 216, 0.22);
+  --color-text: #ece5d8;
+  --color-muted: #b9b3a7;
+  --color-dim: #8d877b;
+  --color-accent: #ff8a3d;
+  --color-accent-deep: #e8622a;
+  --color-accent-soft: rgba(255, 138, 61, 0.14);
+  --color-sky: #7fa6c9;
+
+  /* 需要随主题变化的背景（避免散落硬编码色） */
+  --color-header-bg: rgba(11, 14, 20, 0.78);
+  --card-bg: linear-gradient(155deg, rgba(23, 29, 42, 0.92), rgba(13, 17, 25, 0.9));
+  --mascot-card-bg: linear-gradient(165deg, rgba(23, 29, 42, 0.9), rgba(13, 17, 25, 0.92));
+  --lightbox-bg: rgba(6, 8, 12, 0.92);
+  --lightbox-close-bg: rgba(236, 229, 216, 0.12);
+  --glow-1: rgba(255, 138, 61, 0.13);
+  --glow-2: rgba(127, 166, 201, 0.12);
+  --glow-3: rgba(255, 138, 61, 0.07);
+  --grid-opacity: 0.16;
+}
+
+/* 浅色：晨光刊 —— 暖纸底 + 墨色字 + 更沉稳的赭橙强调，保证浅底对比度 */
+:root[data-theme='light'] {
+  color-scheme: light;
+
+  --color-bg: #f4efe6;
+  --color-surface: #fbf8f1;
+  --color-surface-2: #ece5d8;
+  --color-line: rgba(28, 32, 41, 0.14);
+  --color-line-strong: rgba(28, 32, 41, 0.26);
+  --color-text: #1c2029;
+  --color-muted: #555b66;
+  --color-dim: #7e8590;
+  --color-accent: #c9541f;
+  --color-accent-deep: #a63f14;
+  --color-accent-soft: rgba(201, 84, 31, 0.1);
+  --color-sky: #4a779f;
+
+  --color-header-bg: rgba(244, 239, 230, 0.82);
+  --card-bg: linear-gradient(155deg, rgba(255, 253, 248, 0.96), rgba(240, 233, 220, 0.92));
+  --mascot-card-bg: linear-gradient(165deg, rgba(255, 253, 248, 0.95), rgba(236, 229, 216, 0.92));
+  --lightbox-bg: rgba(28, 24, 20, 0.9);
+  --lightbox-close-bg: rgba(28, 32, 41, 0.1);
+  --glow-1: rgba(201, 84, 31, 0.1);
+  --glow-2: rgba(74, 119, 159, 0.09);
+  --glow-3: rgba(201, 84, 31, 0.05);
+  --grid-opacity: 0.1;
 }
 
 /* ---------- 2. 基础重置 ---------- */
@@ -127,9 +170,9 @@ a {
   z-index: -2;
   pointer-events: none;
   background:
-    radial-gradient(58rem 42rem at 8% -12%, rgba(255, 138, 61, 0.13), transparent 62%),
-    radial-gradient(52rem 40rem at 104% 2%, rgba(127, 166, 201, 0.12), transparent 58%),
-    radial-gradient(46rem 38rem at 50% 108%, rgba(255, 138, 61, 0.07), transparent 60%),
+    radial-gradient(58rem 42rem at 8% -12%, var(--glow-1), transparent 62%),
+    radial-gradient(52rem 40rem at 104% 2%, var(--glow-2), transparent 58%),
+    radial-gradient(46rem 38rem at 50% 108%, var(--glow-3), transparent 60%),
     var(--color-bg);
 }
 
@@ -139,7 +182,7 @@ a {
   inset: 0;
   z-index: -1;
   pointer-events: none;
-  opacity: 0.16;
+  opacity: var(--grid-opacity);
   background-image:
     linear-gradient(var(--color-line) 1px, transparent 1px),
     linear-gradient(90deg, var(--color-line) 1px, transparent 1px);
@@ -168,7 +211,7 @@ a {
   padding-left: max(var(--space-5), env(safe-area-inset-left));
   padding-right: max(var(--space-5), env(safe-area-inset-right));
   border-bottom: 1px solid var(--color-line);
-  background: rgba(11, 14, 20, 0.78);
+  background: var(--color-header-bg);
   -webkit-backdrop-filter: blur(18px) saturate(140%);
   backdrop-filter: blur(18px) saturate(140%);
 }
@@ -210,6 +253,44 @@ a {
   color: var(--color-accent);
   border-color: var(--color-accent);
   background: var(--color-accent-soft);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.theme-toggle {
+  display: inline-grid;
+  flex: 0 0 auto;
+  width: 2.5rem;
+  height: 2.5rem;
+  place-items: center;
+  padding: 0;
+  color: var(--color-muted);
+  background: transparent;
+  border: 1px solid var(--color-line);
+  border-radius: 50%;
+  cursor: pointer;
+  transition:
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    background-color var(--dur-fast) ease,
+    transform var(--dur-fast) var(--ease-out);
+}
+
+.theme-toggle svg {
+  width: 1.15rem;
+  height: 1.15rem;
+}
+
+.theme-toggle:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+  background: var(--color-accent-soft);
+  transform: rotate(18deg);
 }
 
 .brand {
@@ -620,7 +701,7 @@ main {
 /* 面板：墨色玻璃质感 + 发丝描边 + 顶部一线暖光 */
 .glass-card {
   position: relative;
-  background: linear-gradient(155deg, rgba(23, 29, 42, 0.92), rgba(13, 17, 25, 0.9));
+  background: var(--card-bg);
   border: 1px solid var(--color-line);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-2);
@@ -994,8 +1075,13 @@ main {
     padding-bottom: var(--space-3);
   }
 
-  .site-nav {
+  .header-right {
     width: 100%;
+    gap: var(--space-2);
+  }
+
+  .site-nav {
+    flex: 1;
   }
 
   .site-nav a {

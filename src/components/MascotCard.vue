@@ -105,7 +105,7 @@ onBeforeUnmount(() => {
   place-items: center;
   padding: 0.7rem 0.7rem 2.2rem;
   overflow: hidden;
-  background: linear-gradient(165deg, rgba(23, 29, 42, 0.9), rgba(13, 17, 25, 0.92));
+  background: var(--mascot-card-bg);
 }
 
 /* 封面图注：刊物感的小字 */
@@ -158,7 +158,7 @@ onBeforeUnmount(() => {
   padding-right: max(2rem, env(safe-area-inset-right));
   padding-bottom: max(2rem, env(safe-area-inset-bottom));
   padding-left: max(2rem, env(safe-area-inset-left));
-  background: rgba(6, 8, 12, 0.92);
+  background: var(--lightbox-bg);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
   cursor: zoom-out;
@@ -190,7 +190,7 @@ onBeforeUnmount(() => {
   place-items: center;
   padding: 0;
   color: var(--color-text);
-  background: rgba(236, 229, 216, 0.12);
+  background: var(--lightbox-close-bg);
   border: 1px solid var(--color-line);
   border-radius: 50%;
   font-size: 1.6rem;

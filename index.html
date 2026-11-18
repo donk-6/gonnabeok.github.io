@@ -9,6 +9,22 @@
       content="gonnabeok 的个人技术刊物 — 记录工程实践、学习笔记与项目复盘。"
     />
 
+    <!-- 在样式生效前定好主题，避免刷新时深色/浅色闪烁；仅认 dark/light，其余回退深色 -->
+    <script>
+      (function () {
+        try {
+          var saved = localStorage.getItem('gonnabeok-theme');
+          var theme = saved === 'light' || saved === 'dark' ? saved : 'dark';
+          document.documentElement.setAttribute('data-theme', theme);
+          document.documentElement.style.colorScheme = theme;
+          var meta = document.querySelector('meta[name="theme-color"]');
+          if (meta) meta.setAttribute('content', theme === 'light' ? '#f2ede3' : '#0b0e14');
+        } catch (e) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
     <!-- 展示字 Playfair Display（衬线）与数据字 IBM Plex Mono；字体异步加载，失败时回退到系统宋体/等宽 -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
