@@ -1,13 +1,7 @@
 <script setup lang="ts">
-import { computed, onMounted, ref } from 'vue'
-import { useRoute, useRouter } from 'vue-router'
+import { onMounted, ref } from 'vue'
 
-const router = useRouter()
-const route = useRoute()
 const year = new Date().getFullYear()
-
-// 首页不显示返回按钮（已是站点入口，无需回退）
-const showBackButton = computed(() => route.path !== '/')
 
 type Theme = 'dark' | 'light'
 const theme = ref<Theme>('dark')
@@ -35,34 +29,12 @@ onMounted(() => {
   const saved = localStorage.getItem('gonnabeok-theme')
   applyTheme(saved === 'light' || saved === 'dark' ? saved : 'dark')
 })
-
-function goBack() {
-  const state = window.history.state as { back?: unknown } | null
-  if (state?.back) {
-    router.back()
-  } else {
-    router.push('/')
-  }
-}
 </script>
 
 <template>
   <div class="site-shell app-bg">
     <header class="site-header">
       <div class="header-left">
-        <button
-          v-if="showBackButton"
-          type="button"
-          class="back-button"
-          aria-label="返回上一页"
-          @click="goBack"
-        >
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path d="M15.5 4.5 8 12l7.5 7.5 1.4-1.4L10.8 12l6.1-6.1z" />
-          </svg>
-          <span>返回</span>
-        </button>
-
         <RouterLink class="brand" to="/" aria-label="返回首页">
           <span class="brand-mark">G</span>
           <span class="brand-text">gonnabeok</span>
