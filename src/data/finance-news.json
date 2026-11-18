@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-11-18T15:50:00+08:00",
-  "updatedDate": "2026-11-18",
+  "updatedAt": "2026-11-19T04:45:00+08:00",
+  "updatedDate": "2026-11-19",
   "source": "新浪财经",
   "items": [
     {
       "category": "黄金",
-      "title": "黄金价格跌破每盎司3800美元 美联储官员暗示进一步加息",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-18/doc-inizcvvc4837681.shtml",
-      "intro": "黄金2025年9月以来首次跌破每盎司3，800美元，此前美联储官员暗示进一步加息以应对顽固通胀。 金价一度下跌1.9%，连续第三个交易日走低。",
+      "title": "金价跌至年内低点，矿业股应声大跌",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-18/doc-inizensx6773373.shtml",
+      "intro": "周三现货黄金价格跌幅超 2%，创下一年以来最低水平。黄金矿业板块个股随贵金属价格同步走弱。 纽蒙特（NEM）股价下跌 3%，自由港麦克莫兰（FCX）下跌 2.5%。",
       "source": "环球市场播报",
-      "time": "15:09"
+      "time": "21:04"
     },
     {
       "category": "标普500",
-      "title": "美国股市：标普500指数创9月以来最长连跌 英伟达业绩考验AI交易信心",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-18/doc-inizayrm1290913.shtml",
-      "intro": "标普500指数连续第四个交易日下跌，投资者等待英伟达盘后公布备受瞩目的业绩，寄希望这份报告有助于恢复市场对人工智能交易的信心。",
+      "title": "美联储理事巴尔称进一步加息可能是适宜之举",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-19/doc-inizfcqm0635226.shtml",
+      "intro": "美联储理事迈克尔·巴尔周三表示，为帮助遏制持续挤压美国家庭的通胀，进一步提高利率可能是合适的。 巴尔表示，美国经济强劲，失业率处于低位，消费者支出稳健。",
       "source": "环球市场播报",
-      "time": "06:29"
+      "time": "04:22"
     }
   ]
 }
