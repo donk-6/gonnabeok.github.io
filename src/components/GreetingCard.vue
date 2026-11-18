@@ -75,33 +75,58 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .greeting-card {
-  padding: 1.6rem 1.8rem;
+  position: relative;
+  padding: 1.8rem 2rem 2rem;
 }
 
-
+/* 装饰性大引号：贴在问候语右上角，作为编辑感的点睛 */
+.greeting-card::after {
+  content: '\201D';
+  position: absolute;
+  top: 1.2rem;
+  right: 2rem;
+  color: var(--color-accent);
+  font-family: var(--font-display);
+  font-size: 3.4rem;
+  line-height: 1;
+  opacity: 0.3;
+  pointer-events: none;
+}
 
 .greeting-card h1 {
+  position: relative;
+  z-index: 1;
   margin: 0;
-  color: #111827;
-  font-size: clamp(2rem, 5vw, 3.2rem);
-  line-height: 1.15;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: clamp(2.4rem, 6vw, 3.6rem);
+  font-weight: 600;
+  line-height: 1.08;
+  letter-spacing: -0.02em;
 }
 
 .quote-block {
-  margin-top: 0.9rem;
+  position: relative;
+  z-index: 1;
+  margin-top: 1.4rem;
+  padding-left: 1.1rem;
+  border-left: 2px solid var(--color-accent);
 }
 
 .quote {
   margin: 0;
-  color: #586174;
-  font-size: 1.02rem;
-  line-height: 1.7;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: 1.08rem;
+  font-style: italic;
+  line-height: 1.75;
 }
 
 .quote-author {
-  margin: 0.35rem 0 0;
-  color: #9aa3b2;
-  font-size: 0.85rem;
+  margin: 0.5rem 0 0;
+  color: var(--color-dim);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
   text-align: right;
 }
 
@@ -122,7 +147,12 @@ onBeforeUnmount(() => {
 
 @media (max-width: 480px) {
   .greeting-card {
-    padding: 1.3rem;
+    padding: 1.4rem 1.4rem 1.6rem;
+  }
+
+  .greeting-card::after {
+    font-size: 2.6rem;
+    right: 1.4rem;
   }
 }
 </style>

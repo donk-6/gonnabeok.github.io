@@ -65,7 +65,7 @@ const updatedText = computed(() => {
 <style scoped>
 .news-card {
   overflow: hidden;
-  padding: 1rem 1.1rem;
+  padding: var(--space-4);
 }
 
 .news-head {
@@ -81,15 +81,15 @@ const updatedText = computed(() => {
 
 .news-updated {
   flex: 0 0 auto;
-  color: #7b8497;
-  font-size: 0.72rem;
-  font-weight: 700;
+  color: var(--color-dim);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
 }
 
 .news-groups {
   display: grid;
-  gap: 0.75rem;
-  margin-top: 0.7rem;
+  gap: var(--space-3);
+  margin-top: var(--space-3);
   min-width: 0;
 }
 
@@ -103,24 +103,27 @@ const updatedText = computed(() => {
 .news-category {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.4rem;
   margin: 0 0 0.1rem;
-  color: #1b74e4;
-  font-size: 0.76rem;
-  font-weight: 900;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
 }
 
 .news-category::before {
   content: '';
   flex: 0 0 auto;
-  width: 0.45rem;
-  height: 0.45rem;
-  background: #1b74e4;
+  width: 0.42rem;
+  height: 0.42rem;
+  background: var(--color-accent);
   border-radius: 999px;
 }
 
 .news-group:nth-child(1) .news-category::before {
-  background: #d4a017;
+  background: var(--color-sky);
 }
 
 .news-item {
@@ -128,26 +131,26 @@ const updatedText = computed(() => {
   align-items: flex-start;
   gap: 0.5rem;
   min-width: 0;
-  padding: 0.38rem 0.55rem;
-  background: #f6f8fc;
-  border: 1px solid transparent;
-  border-radius: 0.5rem;
+  padding: 0.45rem 0.55rem;
+  background: var(--color-surface-2);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
   text-decoration: none;
   transition:
-    background-color 0.15s ease,
-    border-color 0.15s ease;
+    border-color var(--dur-fast) ease,
+    transform var(--dur-fast) ease;
 }
 
 .news-item:hover {
-  background: #e7f0fb;
-  border-color: rgba(27, 116, 228, 0.22);
+  border-color: var(--color-accent);
+  transform: translateX(2px);
 }
 
 .news-index {
   flex: 0 0 auto;
-  color: #1b74e4;
-  font-size: 0.72rem;
-  font-weight: 900;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.7rem;
 }
 
 .news-body {
@@ -157,23 +160,25 @@ const updatedText = computed(() => {
 .news-body strong {
   display: block;
   overflow: hidden;
-  color: #111827;
+  color: var(--color-text);
   font-size: 0.83rem;
+  font-weight: 600;
   line-height: 1.45;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
 
 .news-item:hover .news-body strong {
-  color: #1b74e4;
+  color: var(--color-accent);
 }
 
 .news-body small {
   display: block;
   margin-top: 0.15rem;
   overflow: hidden;
-  color: #9aa4b8;
-  font-size: 0.7rem;
+  color: var(--color-dim);
+  font-family: var(--font-mono);
+  font-size: 0.66rem;
   text-overflow: ellipsis;
   white-space: nowrap;
 }
@@ -184,36 +189,36 @@ const updatedText = computed(() => {
   justify-content: center;
   flex-direction: column;
   gap: 0.3rem;
-  margin-top: 0.7rem;
-  padding: 0.9rem;
-  color: #9aa4b8;
-  background: #f2f5f9;
-  border: 1px dashed rgba(23, 32, 51, 0.16);
-  border-radius: 0.6rem;
+  margin-top: var(--space-3);
+  padding: var(--space-4);
+  color: var(--color-dim);
+  background: var(--color-surface-2);
+  border: 1px dashed var(--color-line-strong);
+  border-radius: var(--radius-sm);
   text-align: center;
 }
 
 .news-empty p {
   margin: 0;
-  color: #586174;
+  color: var(--color-muted);
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .news-empty small {
-  font-size: 0.74rem;
+  font-size: 0.72rem;
 }
 
 .news-more {
   display: inline-block;
-  margin-top: 0.65rem;
-  color: #1b74e4;
-  font-size: 0.76rem;
-  font-weight: 700;
-  text-decoration: none;
+  margin-top: var(--space-3);
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
 }
 
 .news-more:hover {
   text-decoration: underline;
+  text-underline-offset: 3px;
 }
 </style>

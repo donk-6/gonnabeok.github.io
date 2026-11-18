@@ -43,8 +43,8 @@ function goBack() {
     </main>
 
     <footer class="site-footer">
-      <span>© {{ year }} gonnabeok · 用 Vue 3 书写</span>
-      <span>Powered by Vue 3 &amp; Vite</span>
+      <span>© {{ year }} gonnabeok — 一份持续更新的个人技术刊物</span>
+      <span>SET IN PLAYFAIR &amp; IBM PLEX · BUILT WITH VUE</span>
     </footer>
   </div>
 </template>

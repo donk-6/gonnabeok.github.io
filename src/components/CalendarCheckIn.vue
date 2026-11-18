@@ -126,6 +126,7 @@ onBeforeUnmount(() => {
   <div class="glass-card checkin-card">
     <div class="checkin-head">
       <div>
+        <p class="checkin-label">CHECK-IN</p>
         <strong>签到日历</strong>
         <small>{{ monthTitle }}</small>
       </div>
@@ -176,54 +177,67 @@ onBeforeUnmount(() => {
 
 <style scoped>
 .checkin-card {
-  padding: 1.1rem 1.2rem;
+  padding: var(--space-4);
 }
 
 .checkin-head {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 0.8rem;
+  margin-bottom: var(--space-3);
+}
+
+.checkin-label {
+  margin: 0 0 0.25rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: 0.6rem;
+  letter-spacing: 0.16em;
 }
 
 .checkin-head strong {
   display: block;
-  color: #111827;
-  font-size: 0.95rem;
+  color: var(--color-text);
+  font-family: var(--font-display);
+  font-size: var(--step-0);
+  font-weight: 600;
 }
 
 .checkin-head small {
-  color: #9aa4b8;
-  font-size: 0.72rem;
+  color: var(--color-dim);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
 }
 
 .checkin-nav {
   display: flex;
-  gap: 0.3rem;
+  gap: 0.25rem;
 }
 
 .checkin-nav button {
   display: grid;
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 1.55rem;
+  height: 1.55rem;
   place-items: center;
-  border: 0;
-  border-radius: 0.35rem;
-  color: #586174;
-  background: #eef2f8;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-sm);
+  color: var(--color-muted);
+  background: var(--color-surface-2);
   font-size: 1rem;
   line-height: 1;
   cursor: pointer;
+  transition:
+    color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease;
 }
 
 .checkin-nav button:hover {
-  color: #1b74e4;
-  background: #e7f0fb;
+  color: var(--color-accent);
+  border-color: var(--color-accent);
 }
 
 .checkin-nav .back-today {
-  font-size: 0.7rem;
-  font-weight: 700;
+  font-size: 0.68rem;
 }
 
 .checkin-week,
@@ -239,9 +253,9 @@ onBeforeUnmount(() => {
 }
 
 .checkin-week span {
-  color: #9aa4b8;
-  font-size: 0.68rem;
-  font-weight: 700;
+  color: var(--color-dim);
+  font-family: var(--font-mono);
+  font-size: 0.64rem;
 }
 
 .checkin-day {
@@ -249,9 +263,10 @@ onBeforeUnmount(() => {
   display: grid;
   aspect-ratio: 1;
   place-items: center;
-  border-radius: 0.35rem;
-  color: #586174;
-  font-size: 0.72rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-muted);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
 }
 
 .checkin-day.blank {
@@ -262,81 +277,90 @@ onBeforeUnmount(() => {
   cursor: pointer;
 }
 
+.checkin-day.clickable:hover {
+  background: var(--color-surface-2);
+}
+
 .checkin-day.signed {
-  color: #1b74e4;
-  background: #e7f0fb;
-  font-weight: 800;
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
+  font-weight: 600;
 }
 
 .checkin-day.signed::after {
   position: absolute;
-  bottom: 2px;
+  bottom: 3px;
   width: 3px;
   height: 3px;
   border-radius: 50%;
-  background: #1b74e4;
+  background: var(--color-accent);
   content: '';
 }
 
 .checkin-day.is-today {
-  box-shadow: inset 0 0 0 1.5px #1b74e4;
-  color: #1b74e4;
-  font-weight: 800;
+  box-shadow: inset 0 0 0 1.5px var(--color-accent);
+  color: var(--color-accent);
+  font-weight: 600;
 }
 
 .checkin-day.is-today.signed {
-  color: #ffffff;
-  background: #1b74e4;
+  color: var(--color-bg);
+  background: var(--color-accent);
   box-shadow: none;
 }
 
 .checkin-day.is-today.signed::after {
-  background: #ffffff;
+  background: var(--color-bg);
 }
 
 .checkin-stats {
   display: flex;
   justify-content: space-between;
-  margin: 0.8rem 0 0.6rem;
-  padding-top: 0.7rem;
-  border-top: 1px dashed rgba(23, 32, 51, 0.12);
-  color: #7a8496;
-  font-size: 0.74rem;
+  margin: var(--space-3) 0 var(--space-3);
+  padding-top: var(--space-3);
+  border-top: 1px dashed var(--color-line-strong);
+  color: var(--color-dim);
+  font-size: 0.72rem;
 }
 
 .checkin-stats b {
-  color: #111827;
-  font-size: 0.95rem;
+  color: var(--color-accent);
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  font-variant-numeric: tabular-nums;
 }
 
 .checkin-button {
   width: 100%;
-  min-height: 2.5rem;
-  border: 0;
-  border-radius: 0.6rem;
-  color: #ffffff;
-  background: #1b74e4;
-  font-weight: 800;
+  min-height: 2.6rem;
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-sm);
+  color: var(--color-bg);
+  background: var(--color-accent);
+  font-weight: 700;
   cursor: pointer;
-  box-shadow: 0 0.5rem 1.2rem rgba(27, 116, 228, 0.25);
+  transition:
+    background-color var(--dur-fast) ease,
+    border-color var(--dur-fast) ease,
+    color var(--dur-fast) ease;
 }
 
 .checkin-button:hover {
-  background: #155fc0;
+  background: var(--color-accent-deep);
+  border-color: var(--color-accent-deep);
 }
 
 .checkin-button.done {
-  color: #8a94a6;
-  background: #eef2f8;
-  box-shadow: none;
+  color: var(--color-dim);
+  background: transparent;
+  border-color: var(--color-line);
   cursor: default;
 }
 
 .checkin-tip {
-  margin: 0.55rem 0 0;
-  color: #1b74e4;
-  font-size: 0.74rem;
-  font-weight: 600;
+  margin: var(--space-2) 0 0;
+  color: var(--color-accent);
+  font-size: 0.72rem;
   text-align: center;
 }
 

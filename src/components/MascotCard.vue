@@ -68,25 +68,21 @@ onBeforeUnmount(() => {
   position: relative;
   display: grid;
   place-items: center;
-  padding: 1.4rem;
+  padding: 0.7rem 0.7rem 2.2rem;
   overflow: hidden;
-  background: linear-gradient(
-    165deg,
-    rgba(255, 255, 255, 0.96) 0%,
-    rgba(236, 244, 253, 0.88) 100%
-  );
+  background: linear-gradient(165deg, rgba(23, 29, 42, 0.9), rgba(13, 17, 25, 0.92));
 }
 
+/* 封面图注：刊物感的小字 */
 .mascot-card::after {
-  content: '';
+  content: 'FIG. 01 — 云海之上 / ABOVE THE CLOUDS';
   position: absolute;
-  inset: 0;
-  border-radius: 5px;
-  background: linear-gradient(
-    180deg,
-    rgba(27, 116, 228, 0) 55%,
-    rgba(27, 116, 228, 0.07) 100%
-  );
+  bottom: 0.7rem;
+  left: 1rem;
+  color: var(--color-dim);
+  font-family: var(--font-mono);
+  font-size: 0.62rem;
+  letter-spacing: 0.08em;
   pointer-events: none;
 }
 
@@ -103,10 +99,14 @@ onBeforeUnmount(() => {
   display: block;
   width: 100%;
   height: auto;
-  border-radius: 5px;
-  box-shadow: 0 4px 14px rgba(23, 32, 51, 0.1);
-  filter: saturate(0.9) brightness(1.04) contrast(1.02);
-  transform: scale(0.99);
+  border-radius: 4px;
+  filter: saturate(0.92) contrast(1.05) brightness(0.96);
+  transition: filter var(--dur-base) ease, transform var(--dur-base) var(--ease-out);
+}
+
+.mascot-zoom:hover img {
+  filter: saturate(1.05) contrast(1.03) brightness(1.02);
+  transform: scale(1.015);
 }
 
 .mascot-lightbox {
@@ -120,17 +120,18 @@ onBeforeUnmount(() => {
   padding-right: max(2rem, env(safe-area-inset-right));
   padding-bottom: max(2rem, env(safe-area-inset-bottom));
   padding-left: max(2rem, env(safe-area-inset-left));
-  background: rgba(15, 23, 42, 0.82);
-  -webkit-backdrop-filter: blur(6px);
-  backdrop-filter: blur(6px);
+  background: rgba(6, 8, 12, 0.9);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
   cursor: zoom-out;
 }
 
 .mascot-lightbox-img {
   max-width: 92vw;
   max-height: 88vh;
-  border-radius: 0.75rem;
-  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--color-line-strong);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-3);
   cursor: default;
 }
 
@@ -143,18 +144,19 @@ onBeforeUnmount(() => {
   height: 2.75rem;
   place-items: center;
   padding: 0;
-  color: #ffffff;
-  background: rgba(255, 255, 255, 0.14);
-  border: 0;
+  color: var(--color-text);
+  background: rgba(236, 229, 216, 0.1);
+  border: 1px solid var(--color-line);
   border-radius: 50%;
   font-size: 1.5rem;
   line-height: 1;
   cursor: pointer;
-  transition: background-color 0.15s ease;
+  transition: background-color var(--dur-fast) ease;
 }
 
 .lightbox-close:hover {
-  background: rgba(255, 255, 255, 0.28);
+  color: var(--color-accent);
+  background: var(--color-accent-soft);
 }
 
 .zoom-fade-enter-active,

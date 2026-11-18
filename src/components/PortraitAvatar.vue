@@ -27,9 +27,9 @@ defineProps<{
   height: 3.1rem;
   place-items: center;
   overflow: hidden;
-  color: #ffffff;
-  background: #172033;
-  border-radius: 0.9rem;
+  color: var(--color-bg);
+  background: var(--color-accent);
+  border-radius: var(--radius-sm);
 }
 
 /* 有图片时去掉深色背景，让图片铺满 */

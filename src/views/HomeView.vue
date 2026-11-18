@@ -94,6 +94,8 @@ onBeforeUnmount(() => {
           <small>{{ featuredPosts[0]?.date ?? '文章发布后会显示在这里' }}</small>
         </div>
       </div>
+      <p class="latest-excerpt">{{ featuredPosts[0]?.summary ?? '' }}</p>
+      <span class="latest-read">阅读全文 →</span>
     </RouterLink>
 
     <FinanceNewsModule id="topics" />
