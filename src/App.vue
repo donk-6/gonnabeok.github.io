@@ -1,9 +1,13 @@
 <script setup lang="ts">
-import { onMounted, ref } from 'vue'
-import { useRouter } from 'vue-router'
+import { computed, onMounted, ref } from 'vue'
+import { useRoute, useRouter } from 'vue-router'
 
 const router = useRouter()
+const route = useRoute()
 const year = new Date().getFullYear()
+
+// 首页不显示返回按钮（已是站点入口，无需回退）
+const showBackButton = computed(() => route.path !== '/')
 
 type Theme = 'dark' | 'light'
 const theme = ref<Theme>('dark')
@@ -46,7 +50,13 @@ function goBack() {
   <div class="site-shell app-bg">
     <header class="site-header">
       <div class="header-left">
-        <button type="button" class="back-button" aria-label="返回上一页" @click="goBack">
+        <button
+          v-if="showBackButton"
+          type="button"
+          class="back-button"
+          aria-label="返回上一页"
+          @click="goBack"
+        >
           <svg viewBox="0 0 24 24" aria-hidden="true">
             <path d="M15.5 4.5 8 12l7.5 7.5 1.4-1.4L10.8 12l6.1-6.1z" />
           </svg>
