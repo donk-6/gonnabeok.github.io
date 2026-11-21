@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-11-21T04:35:00+08:00",
+  "updatedAt": "2026-11-21T15:36:00+08:00",
   "updatedDate": "2026-11-21",
   "source": "新浪财经",
   "items": [
     {
       "category": "黄金",
-      "title": "比特币遭遇抛售：与股票同步下跌，加密资产再度通不过 “数字黄金”考验",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-21/doc-inizmfez0180144.shtml",
-      "intro": "核心要点比特币本轮抛售再度和风险资产同步波动，削弱了它作为独立市场对冲工具的逻辑。专家指出利率、市场整体避险交易、ETF 资金流出...",
-      "source": "环球市场播报",
-      "time": "00:20"
+      "title": "英伟达暴泻14%，Anthropic跌8.5%，纳指抹去年内涨幅，标普七连跌，黄金重挫",
+      "url": "https://finance.sina.com.cn/roll/2026-11-21/doc-inizmwan6884457.shtml",
+      "intro": "道指和标普500指数较近期收盘高位回落超过10%，进入回调区间，纳指则抹去年内全部涨幅。 *三大股指大幅收跌，道指和标普500指数较近期收盘高位回落超过10%；...",
+      "source": "一财网",
+      "time": "07:38"
     },
     {
       "category": "标普500",
-      "title": "凯投宏观表示：科技股与标普500的下跌行情 “尚未结束”",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-20/doc-inizmfet5388844.shtml",
-      "intro": "凯投宏观（Capital Economics）高级市场经济学家詹姆斯・赖利认为，科技股以及标普 500 指数近期承受的下行压力或许还没有到头。",
+      "title": "美国股市：标普500指数跌入技术性回调区间 AI交易瓦解担忧席卷华尔街",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-21/doc-inizmwaq3611409.shtml",
+      "intro": "由于市场日益担心推动美股今年屡创新高的AI热潮正在瓦解，华尔街周五遭遇重挫。英伟达相关风波持续发酵，公司股价跌至18个月低点，Anthropic也回吐上市首日的大部分涨幅。",
       "source": "环球市场播报",
-      "time": "23:59"
+      "time": "06:15"
     }
   ]
 }
