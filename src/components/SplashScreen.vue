@@ -2,8 +2,8 @@
 import { onMounted, onUnmounted, ref } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 
-// 停留时长：1 秒后自动进入目标页（略高于需求，确保「无限进步」四字完整亮相）
-const STAY_MS = 1000
+// 停留时长：3 秒后自动进入目标页（完整展示「無限進步」开屏动画）
+const STAY_MS = 3000
 
 const router = useRouter()
 const route = useRoute()
@@ -21,7 +21,7 @@ function goHome() {
 }
 
 onMounted(() => {
-  // 1 秒后触发退场；退场动画自身约 480ms，总停留 ≈ 1.5s
+  // 3 秒后触发退场；退场动画自身约 480ms
   timer = setTimeout(goHome, STAY_MS)
 })
 
