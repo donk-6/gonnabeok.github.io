@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-11-26T05:52:00+08:00",
+  "updatedAt": "2026-11-26T16:46:00+08:00",
   "updatedDate": "2026-11-26",
   "source": "新浪财经",
   "items": [
     {
       "category": "黄金",
-      "title": "大宗商品综述：油价上涨 铜价跌入熊市区间 金价反弹",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-26/doc-inizyzms8283739.shtml",
-      "intro": "油价在清淡交投中上涨，中东地区袭击加剧，令该地区近几个月逐步恢复的原油运输前景蒙上阴影。铜价进入熊市区间，AI交易担忧打压市场情绪。",
+      "title": "今日黄金：涨跌互现，PCE创新高压制金价反弹",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-26/doc-inizzwrc8959475.shtml",
+      "intro": "11月26日，国际黄金价格涨跌互现。美国最新公布的核心个人消费支出（PCE）物价指数超出市场预期，进一步强化了市场对美联储12月加息及明年继续收紧货币政策的预期...",
       "source": "环球市场播报",
-      "time": "05:37"
+      "time": "14:22"
     },
     {
       "category": "标普500",
-      "title": "德银策略师：标普500到2027年底有25%上行空间",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-25/doc-inizxxyc1766149.shtml",
-      "intro": "德意志银行称，稳健的盈利增长以及股票需求将推动标普500在2027年底升至约9000点，较上一收盘点位有25%的上涨空间。 策略师宾基·查达、帕拉格·塔特表示...",
-      "source": "环球市场播报",
-      "time": "17:18"
+      "title": "标普对英伟达发出治理警示，但黄仁勋的供应链影响力难以交接",
+      "url": "https://finance.sina.com.cn/roll/2026-11-26/doc-inizzsii1457876.shtml",
+      "intro": "中国国产算力企业需加速构建自主可控产业链以应对复杂的外部环境。 英伟达CEO黄仁勋重新回到公司管理岗位，但围绕这家AI芯片巨头的治理和供应链问题，并没有因此平息。",
+      "source": "一财网",
+      "time": "12:24"
     }
   ]
 }
