@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-11-27T16:56:00+08:00",
-  "updatedDate": "2026-11-27",
+  "updatedAt": "2026-11-28T05:29:00+08:00",
+  "updatedDate": "2026-11-28",
   "source": "新浪财经",
   "items": [
     {
       "category": "黄金",
-      "title": "今日黄金：触及逾一年低位后迎来反弹",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-27/doc-inkaefwi3230580.shtml",
-      "intro": "11月27日，国际黄金价格在亚洲交易时段大幅反弹，投资者在金价触及逾一年低位后逢低买入。不过，美国通胀持续高企，市场对美联储连续加息的预期进一步增强...",
+      "title": "瑞银：白银较年内高点下跌近70%，价格已出现过度下跌，预计明年反弹幅度将超过黄金",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-27/doc-inkaewtz3125676.shtml",
+      "intro": "11月27日，瑞银全球财富管理首席投资办公室策略师多米尼克·施奈德（Dominic Schnider）在最新报告中指出，白银经历大规模抛售后已处于超卖状态...",
       "source": "环球市场播报",
-      "time": "15:31"
+      "time": "22:56"
     },
     {
       "category": "标普500",
-      "title": "法国和西班牙通胀放缓程度远超预期",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-27/doc-inkaencz1030424.shtml",
-      "intro": "随着能源价格压力减轻，法国和西班牙通胀放缓程度远超预期。这将让正在权衡是否进一步加息的欧洲央行稍感宽慰。 法国11月消费价格同比上涨3.2%，低于10月的3.7%...",
+      "title": "人工智能热提振美股 标普500指数创下2025年4月以来最大单周涨幅",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-28/doc-inkafiis7624312.shtml",
+      "intro": "美国股市以上涨为华尔街动荡的一周划上了句号，人工智能交易反弹加速，降低了投资者对美国国债和避险货币的需求。 人工智能热的重燃拉动一度走到熊市边缘的纳斯达克100指数...",
       "source": "环球市场播报",
-      "time": "16:50"
+      "time": "02:49"
     }
   ]
 }
