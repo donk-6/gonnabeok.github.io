@@ -1,23 +1,23 @@
 {
-  "updatedAt": "2026-11-26T16:46:00+08:00",
-  "updatedDate": "2026-11-26",
+  "updatedAt": "2026-11-27T16:56:00+08:00",
+  "updatedDate": "2026-11-27",
   "source": "新浪财经",
   "items": [
     {
       "category": "黄金",
-      "title": "今日黄金：涨跌互现，PCE创新高压制金价反弹",
-      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-26/doc-inizzwrc8959475.shtml",
-      "intro": "11月26日，国际黄金价格涨跌互现。美国最新公布的核心个人消费支出（PCE）物价指数超出市场预期，进一步强化了市场对美联储12月加息及明年继续收紧货币政策的预期...",
+      "title": "今日黄金：触及逾一年低位后迎来反弹",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-27/doc-inkaefwi3230580.shtml",
+      "intro": "11月27日，国际黄金价格在亚洲交易时段大幅反弹，投资者在金价触及逾一年低位后逢低买入。不过，美国通胀持续高企，市场对美联储连续加息的预期进一步增强...",
       "source": "环球市场播报",
-      "time": "14:22"
+      "time": "15:31"
     },
     {
       "category": "标普500",
-      "title": "标普对英伟达发出治理警示，但黄仁勋的供应链影响力难以交接",
-      "url": "https://finance.sina.com.cn/roll/2026-11-26/doc-inizzsii1457876.shtml",
-      "intro": "中国国产算力企业需加速构建自主可控产业链以应对复杂的外部环境。 英伟达CEO黄仁勋重新回到公司管理岗位，但围绕这家AI芯片巨头的治理和供应链问题，并没有因此平息。",
-      "source": "一财网",
-      "time": "12:24"
+      "title": "法国和西班牙通胀放缓程度远超预期",
+      "url": "https://finance.sina.com.cn/stock/usstock/c/2026-11-27/doc-inkaencz1030424.shtml",
+      "intro": "随着能源价格压力减轻，法国和西班牙通胀放缓程度远超预期。这将让正在权衡是否进一步加息的欧洲央行稍感宽慰。 法国11月消费价格同比上涨3.2%，低于10月的3.7%...",
+      "source": "环球市场播报",
+      "time": "16:50"
     }
   ]
 }
